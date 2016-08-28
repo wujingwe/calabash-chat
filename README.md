@@ -3,7 +3,7 @@ Calabash test cases for Chat
 
 Prerequirement
 --------------
-Download and install calabash-android base on [here][calabash-android-install]
+Download and install calabash-android on [here][calabash-android-install]
 
 Run test cases
 --------------
