@@ -35,5 +35,5 @@ And /^I click on LOGIN Button$/ do
 end
 
 Then /^I should user login successfully$/ do
-	wait_for_element_does_not_exist("DialogTitle id:'alertTitle'", :timeout => 1)
+	wait_for_element_does_not_exist("DialogTitle id:'alertTitle'", :timeout => 2)
 end

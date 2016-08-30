@@ -1,5 +1,8 @@
 test_servers/
+.irb-history
 
 screenshot_*.png
+landscape_*.png
+portrait_*.png
 reports.html
 *.apk

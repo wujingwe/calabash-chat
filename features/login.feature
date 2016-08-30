@@ -10,6 +10,7 @@ Feature: Login feature
 		And I check HTTPS CheckBox
 		And I click on LOGIN Button
 		Then I wait for progress
+		Then I wait
 		Then I take a screenshot
 		Then I should user login successfully
 
@@ -23,6 +24,7 @@ Feature: Login feature
 		And I check HTTPS CheckBox
 		And I click on LOGIN Button
 		Then I wait for progress
+		Then I wait
 		Then I take a screenshot
 		Then I should see error "帳號或密碼有誤，請再試一次。"
 
