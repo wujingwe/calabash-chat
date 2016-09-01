@@ -15,3 +15,7 @@ end
 Then /^I take a (.*?) screenshot$/ do |rotation|
 	screenshot_embed(:name => "#{rotation}_#{Time.now.to_i}")
 end
+
+Then /^I hide AlertDialog$/ do
+	touch("* id:'button1'")
+end
