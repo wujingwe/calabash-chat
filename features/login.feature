@@ -49,5 +49,11 @@ Feature: Login feature
 		Then I should see my username "user"
 		Then I should see login address "localhost"
 
+	Scenario: Create test message
+		Given I am in conversation "Lloyd Wu"
+		Then I write message "Test Message from Calabash"
+		Then I click send button
+		Then I wait
+		Then I should see message "Test Message from Calabash"
 
 
