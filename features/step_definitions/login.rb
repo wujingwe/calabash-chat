@@ -9,16 +9,25 @@ end
 		
 When /^I enter address field with "(.*?)"$/ do |input|
 	check_element_exists("* id:'address'")
+	if (defined? ADDRESS) != nil
+		input = ADDRESS
+	end
 	query("* id:'address'", setText:"#{input}")
 end
 
 And /^I enter account field with "(.*?)"$/ do |input|
 	check_element_exists("* id:'account'")
+	if (defined? ACCOUNT) != nil
+		input = ACCOUNT
+	end
 	query("* id:'account'", setText:"#{input}")
 end
 
 And /^I enter password field with "(.*?)"$/ do |input|
 	check_element_exists("* id:'password'")
+	if input != "wrong_password" && (defined? PASSWORD) != nil
+		input = PASSWORD
+	end
 	query("* id:'password'", setText:"#{input}")
 end
 

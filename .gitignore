@@ -6,3 +6,5 @@ landscape_*.png
 portrait_*.png
 reports.html
 *.apk
+
+features/step_definitions/cred.rb
