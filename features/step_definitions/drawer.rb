@@ -5,7 +5,7 @@ Given /^I am in main view$/ do
 end
 
 Then /^I touch hamburger toggle button$/ do
-	touch("ImageButton")
+	touch("Toolbar AppCompatImageButton")
 end
 
 Then /^I scroll drawer to top$/ do
@@ -13,9 +13,15 @@ Then /^I scroll drawer to top$/ do
 end
 
 Then /^I should see my username "(.*?)"$/ do |input|
+	if (defined? ACCOUNT) != nil
+		input = ACCOUNT
+	end
 	assert_text(input)
 end
 
 Then /^I should see login address "(.*?)"$/ do |address|
+	if (defined? ADDRESS) != nil
+		address = ADDRESS
+	end
 	assert_text(address)
 end
