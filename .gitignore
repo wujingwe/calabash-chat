@@ -6,5 +6,6 @@ landscape_*.png
 portrait_*.png
 reports.html
 *.apk
+.DS_Store
 
 features/step_definitions/cred.rb
