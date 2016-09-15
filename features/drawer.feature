@@ -21,26 +21,3 @@ Feature: Login feature
 		Then I touch hamburger toggle button
 		Then I scroll drawer to top
 		Then I should see my username "user"
-
-	@createMessage
-	Scenario: Create test message
-		Given I am in conversation "001_private"
-		Then I wait
-		Then I write message "Test Message from Calabash"
-		Then I click send button
-		Then I wait
-		Then I should see message "Test Message from Calabash"
-
-	@createMessageURL
-	Scenario: Create url
-		Given I am in conversation "001_private"
-		Then I wait
-		Then I write message "http://reactivex.io/"
-		Then I click send button
-		Then I wait
-		Then I should see message "http://reactivex.io/"
-		Then I wait
-		Then I should see og "ReactiveX"
-		Then I take a screenshot
-
-

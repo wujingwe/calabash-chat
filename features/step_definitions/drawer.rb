@@ -1,27 +1,20 @@
 require 'calabash-android/calabash_steps'
 
-Given /^I am in main view$/ do
-	wait_for_elements_exist("* id:'drawer_layout'", :timeout => 1)
+Given (/^I am in main view$/) do
+	wait_for_elements_exist("* id:'drawer_layout'", :timeout => 10)
 end
 
-Then /^I touch hamburger toggle button$/ do
+Then (/^I touch hamburger toggle button$/) do
 	touch("Toolbar AppCompatImageButton")
 end
 
-Then /^I scroll drawer to top$/ do
+Then (/^I scroll drawer to top$/) do
 	scroll_to_row("RecyclerView index:1", 0)
 end
 
-Then /^I should see my username "(.*?)"$/ do |input|
+Then (/^I should see my username "(.*?)"$/) do |input|
 	if (defined? ACCOUNT) != nil
 		input = ACCOUNT
 	end
 	assert_text(input)
-end
-
-Then /^I should see login address "(.*?)"$/ do |address|
-	if (defined? ADDRESS) != nil
-		address = ADDRESS
-	end
-	assert_text(address)
 end
