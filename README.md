@@ -9,12 +9,12 @@ Run test cases
 --------------
 - Console
 ```
-Make console APK=./test.apk
+make console APK=./test.apk
 ```
 
 - HTML
 ```
-Make html APK=./test.apk
+make html APK=./test.apk
 ```
 
 
