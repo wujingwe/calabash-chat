@@ -1,5 +1,5 @@
 @channel
-Feature: Login feature
+Feature: Drawer feature
 
 	@validlogin @restart
 	Scenario: As a valid user I can log into my app
