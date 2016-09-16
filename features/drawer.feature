@@ -1,4 +1,4 @@
-@channel
+@drawer
 Feature: Drawer feature
 
 	@validlogin @restart
@@ -15,7 +15,7 @@ Feature: Drawer feature
 		Then I take a screenshot
 		Then I should user login successfully
 
-	@enterChannel
+	@checkUsername
 	Scenario: Drawer
 		Given I am in main view
 		Then I touch hamburger toggle button

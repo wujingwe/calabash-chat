@@ -15,13 +15,6 @@ Feature: Login feature
 		Then I take a screenshot
 		Then I should user login successfully
 
-	@enterChannel
-	Scenario: Drawer
-		Given I am in main view
-		Then I touch hamburger toggle button
-		Then I scroll drawer to top
-		Then I should see my username "user"
-
 	@createMessage
 	Scenario: Create test message
 		Given I am in conversation "001_private"
