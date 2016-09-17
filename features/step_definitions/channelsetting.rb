@@ -1,56 +1,63 @@
 require 'calabash-android/calabash_steps'
 
-When /^I am in drawer view$/ do
+When (/^I am in drawer view$/) do
 	if element_does_not_exist("* id:'drawer'")
-		touch("ImageButton")
+		tap_when_element_exists("Toolbar AppCompatImageButton")
 	end
-	touch("* id:'create' index:0")
+
+	syntax = "* id:'create' index:0"
+	q = query(syntax)
+	while q.empty?
+		scroll_down
+		q = query(syntax)
+	end
+	tap_when_element_exists(syntax)
 end
 
-Then /^I create a channel$/ do
-	touch("* id:'create'")
+Then (/^I create a channel$/) do
+	tap_when_element_exists("* id:'create'")
 end
 
-Then /^I enter channelname field with "(.*?)"$/ do |input|
+Then (/^I enter channelname field with "(.*?)"$/) do |input|
        check_element_exists("* id:'title'")
        query("AppCompatEditText id:'title'", setText:"#{input}")
        assert_text("Spaces and special characters are not allowed.")
 end
 
-Then  /^I check channelname length with "(.*?)"$/ do |input|
+Then (/^I check channelname length with "(.*?)"$/) do |input|
 		query("AppCompatEditText id:'title'", setText:"#{input}")
      	assert_text("64 / 64")
 end
 
-Then  /^I write channelname "Testok"$/ do
+Then (/^I write channelname "Testok"$/) do
 		query("AppCompatEditText id:'title'", setText:"Testok")
 end
 
-Then  /^I input purpose "automatic"$/ do
+Then (/^I input purpose "automatic"$/) do
 		query("AppCompatEditText id:'description'", setText:"automatic")
 end
 
-Then  /^I add members $/ do
-		touch("* id:'members_layout'")
+Then (/^I add members $/) do
+		tap_when_element_exists("* id:'members_layout'")
 end
 
-And /^I search the members $/ do
-	touch("* id:'filter'")
-	touch("* id:'invite_layout'")
-	touch("* id:'filter'")
+And (/^I search the members $/) do
+	tap_when_element_exists("* id:'filter'")
+	tap_when_element_exists("* id:'invite_layout'")
+	tap_when_element_exists("* id:'filter'")
 	query("* id:'filter'", setText:"freda")
-	touch("* id:'filter'")
-	touch("* id:'invite'")
-	touch("* id:'done'")
+	tap_when_element_exists("* id:'filter'")
+	tap_when_element_exists("* id:'invite'")
+	tap_when_element_exists("* id:'done'")
 end
 
-Then  /^I enabled Encrypt channel and create it $/ do
-	touch("* id:'private_'")
-	touch("* id:'done'")
+Then (/^I enabled Encrypt channel and create it $/) do
+	tap_when_element_exists("* id:'private_'")
+	tap_when_element_exists("* id:'done'")
 end
 
-And /^I check whether the titile is correct or not $/ do
-	
+And (/^I check whether the titile is correct or not $/) do
+
 end
 
 

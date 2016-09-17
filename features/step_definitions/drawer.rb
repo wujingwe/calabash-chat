@@ -5,7 +5,9 @@ Given (/^I am in main view$/) do
 end
 
 Then (/^I touch hamburger toggle button$/) do
-	touch("Toolbar AppCompatImageButton")
+	if element_does_not_exist("* id:'drawer'")
+		tap_when_element_exists("Toolbar AppCompatImageButton")
+	end
 end
 
 Then (/^I scroll drawer to top$/) do

@@ -17,5 +17,5 @@ Then (/^I take a (.*?) screenshot$/) do |rotation|
 end
 
 Then (/^I hide AlertDialog$/) do
-	touch("* id:'button1'")
+	tap_when_element_exists("* id:'button1'")
 end

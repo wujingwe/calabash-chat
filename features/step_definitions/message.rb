@@ -2,7 +2,7 @@ require 'calabash-android/calabash_steps'
 
 Given (/^I am in conversation "(.*?)"$/) do |conversation|
 	if element_does_not_exist("* id:'drawer'")
-		touch("Toolbar AppCompatImageButton")
+		tap_when_element_exists("Toolbar AppCompatImageButton")
 	end
 
 	syntax = "AppCompatTextView id:'name' text:'#{conversation}'"
@@ -11,16 +11,15 @@ Given (/^I am in conversation "(.*?)"$/) do |conversation|
 		scroll_down
 		q = query(syntax)
 	end
-	touch(syntax)
+	tap_when_element_exists(syntax)
 end
 
 Then (/^I write message "(.*?)"$/) do |input|
-	print input
 	query("MsgMultiAutoCompleteTextView id:'message'", setText:"#{input}")
 end
 
 Then (/^I click send button$/) do
-	touch("* id:'send'")
+	tap_when_element_exists("AppCompatTextView id:'send'")
 end
 
 Then (/^I should see message "(.*?)"$/) do |expected|

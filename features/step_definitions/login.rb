@@ -34,15 +34,16 @@ end
 And (/^I check HTTPS CheckBox$/) do
 	check_element_exists("* id:'cb_https'")
 	if (!query("* id:'cb_https'").first['checked'])
-		touch("* id:'cb_https'")
+		tap_when_element_exists("* id:'cb_https'")
 	end
 end
 
 And (/^I click on LOGIN Button$/) do
 	check_element_exists("* id:'btn_login'")
-	touch("* id:'btn_login'")
+	tap_when_element_exists("* id:'btn_login'")
 end
 
 Then (/^I should user login successfully$/) do
-	wait_for_element_does_not_exist("DialogTitle id:'alertTitle'", :timeout => 5)
+	wait_for_element_does_not_exist("DialogTitle id:'alertTitle'", :timeout => 10)
+	wait_for_element_exists("DrawerLayout id:'drawer_layout'", :timeout => 10)
 end
