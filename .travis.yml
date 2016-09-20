@@ -13,7 +13,7 @@ android:
 
 before_install:
   # install ruby
-  - rvm install 2.3
+  - rvm install 2.3.1
   # install calabash-android
   - gem install calabash-android
 
