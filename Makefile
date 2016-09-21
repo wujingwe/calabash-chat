@@ -6,4 +6,4 @@ html:
 
 clean:
 	rm -rf *.png
-	rm -rf test_servers/
+	rm -rf cucumber.json
