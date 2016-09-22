@@ -22,8 +22,8 @@ Feature: Push notification feature
 		Given I move app to background
         #And there are no notifications with "push(socket connected|disconnected)"
         And Server sends message "push(socket connected)"
-		#When I click a notification with "Chat" and "push(socket connected)"
-		# wait 5 mins for socket disconnected
-        Then I wait for 300 seconds
-        And the server sends me message "push(socket disconnected)"
-		#When I click a notification with "Chat" and "push(socket disconnected)"
+		Then I should see notification "push(socket connected)"
+		# wait 3 mins + 10 seconds for socket disconnected
+		Then I wait for 190 seconds
+		And Server sends message "push(socket disconnected)"
+		Then I should see notification "push(socket disconnected)"
